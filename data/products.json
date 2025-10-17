@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Gaming Laptop RTX 4060",
+    "category": "laptop",
+    "price": "145000",
+    "img": "assets/images/products/laptop1.jpg",
+    "description": "High-performance gaming laptop with Intel i7 CPU, RTX 4060 GPU, 16GB RAM, 1TB SSD."
+  },
+  {
+    "id": 2,
+    "name": "Ryzen 7 Desktop PC",
+    "category": "desktop",
+    "price": "95000",
+    "img": "assets/images/products/desktop1.jpg",
+    "description": "Powerful desktop PC with Ryzen 7 CPU, 16GB RAM, 512GB SSD, perfect for gaming and work."
+  },
+  {
+    "id": 3,
+    "name": "Mechanical Keyboard",
+    "category": "accessory",
+    "price": "3200",
+    "img": "assets/images/products/keyboard1.jpg",
+    "description": "RGB mechanical keyboard with tactile switches, ideal for gaming and typing."
+  },
+  {
+    "id": 4,
+    "name": "Gaming Mouse",
+    "category": "accessory",
+    "price": "2000",
+    "img": "assets/images/products/mouse1.jpg",
+    "description": "High precision gaming mouse with customizable DPI and RGB lighting."
+  },
+  {
+    "id": 5,
+    "name": "Intel i5 Desktop PC",
+    "category": "desktop",
+    "price": "85000",
+    "img": "assets/images/products/desktop2.jpg",
+    "description": "Affordable desktop with Intel i5, 8GB RAM, 512GB SSD, suitable for home and office."
+  },
+  {
+    "id": 6,
+    "name": "Laptop Core i7",
+    "category": "laptop",
+    "price": "120000",
+    "img": "assets/images/products/laptop2.jpg",
+    "description": "Lightweight laptop with Intel i7, 16GB RAM, 1TB SSD, perfect for work and gaming."
+  }
+]
