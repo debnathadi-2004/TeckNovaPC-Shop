@@ -1,26 +1,39 @@
-document.querySelector("#loginForm").addEventListener("submit", async (e) => {
+// js/login.js
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
+  const emailOrPhone = document.getElementById("emailOrPhone").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!emailOrPhone || !password) {
+    alert("Please enter your email/phone and password.");
+    return;
+  }
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/login", {
+    const res = await fetch("/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ emailOrPhone, password })
     });
 
     const data = await res.json();
 
     if (res.ok) {
-      alert("Login successful! ✅");
-      localStorage.setItem("token", data.token);
-      window.location.href = "index.html";
+      // Store JWT and user info in localStorage
+      localStorage.setItem("authToken", data.token);
+      localStorage.setItem("loggedInUser", JSON.stringify(data.user));
+
+      alert(`Welcome, ${data.user.username}!`);
+      window.location.href = "index.html"; // Redirect to home page
     } else {
-      alert(data.message || "Invalid login details.");
+      alert(data.message || "Login failed!");
     }
-  } catch (err) {
-    alert("Error connecting to server.");
+  } catch (error) {
+    console.error("Login error:", error);
+    alert("Something went wrong during login.");
   }
 });
